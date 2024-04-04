@@ -1,0 +1,12 @@
+---
+- name: Start the nginx
+  hosts: localhost
+  become: yes  # Enable privilege escalation if required
+
+  tasks:
+    - name: Ensure nginx is started and enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
